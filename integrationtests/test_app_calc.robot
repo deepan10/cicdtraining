@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Suite description
 
-Library  ../lib/CalcLib.py
+Library  lib/CalcLib.py
 
 *** Test Cases ***
 Test Add

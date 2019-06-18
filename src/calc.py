@@ -1,5 +1,5 @@
-
 import sys
+
 
 class calc:
 
@@ -19,6 +19,7 @@ class calc:
             return float(div_val)
         except ZeroDivisionError:
             raise ZeroDivisionError("check you value")
+
 
 def start():
     calc_obj = calc()

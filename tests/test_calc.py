@@ -1,4 +1,6 @@
 import unittest
+import sys
+sys.path.insert(0, '../../')
 from src.calc import calc
 
 
@@ -31,6 +33,3 @@ class TestCalc(unittest.TestCase):
         with self.assertRaises(ZeroDivisionError):
             self.calc.div(1, 0)
 
-
-if __name__ == '__main__':
-    unittest.main()
