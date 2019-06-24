@@ -24,7 +24,10 @@ pipeline {
         }
         stage ("Build") {
             steps {
-                sh 'echo hi'
+                sh '''
+                    source .venv/bin/activate
+                    python setup.py sdist bdist_wheel
+                '''
             }
         }
         stage ("Testing") {
@@ -39,7 +42,10 @@ pipeline {
                 }
                 stage ("Lint check") {
                     steps {
-                        sh '#pylint src/ tests/'
+                        sh '''
+                            source .venv/bin/activate
+                            pylint src/ tests/
+                        '''
                     }
                 }
             }
@@ -48,7 +54,6 @@ pipeline {
             steps {
                 sh '''
                     source .venv/bin/activate
-                    which python
                     python setup.py install
                 '''
             }
@@ -63,7 +68,10 @@ pipeline {
         }
         stage ("Deploy Prod") {
             steps {
-                sh 'echo deploy'
+                sh '''
+                    source .venv/bin/activate
+                    twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+                '''
             }
         }
     }
