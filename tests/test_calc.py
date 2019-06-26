@@ -1,13 +1,13 @@
 import unittest
 import sys
 sys.path.insert(0, '../../')
-from src.calc import calc
+from src.calcapp import calcapp
 
 
 class TestCalc(unittest.TestCase):
 
     def setUp(self):
-        self.calc = calc()
+        self.calc = calcapp()
 
     def test_add(self):
         result = self.calc.add(1, 1)

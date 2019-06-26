@@ -1,8 +1,7 @@
 import sys
 
 
-class calc:
-
+class calcapp:
 
     def add(self, value_1, value_2):
         return float(value_1 + value_2)
@@ -22,7 +21,7 @@ class calc:
 
 
 def start():
-    calc_obj = calc()
+    calc_obj = calcapp()
     expr = sys.argv[1]
     value_1 = int(sys.argv[2])
     value_2 = int(sys.argv[3])
@@ -34,6 +33,7 @@ def start():
         print(calc_obj.mul(value_1, value_2))
     elif expr == "div":
         print(calc_obj.div(value_1, value_2))
+
 
 if __name__ == "__main__":
     start()

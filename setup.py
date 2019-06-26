@@ -2,7 +2,7 @@ import setuptools
 
 
 setuptools.setup(
-    name="calc",
+    name="calcapp",
     version="0.1",
     author="Deepan",
     author_email="deepan0433@gmail.com",
@@ -14,7 +14,7 @@ setuptools.setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'calc = src.calc:start'
+            'calcapp = src.calcapp:start'
         ]
     },
 )

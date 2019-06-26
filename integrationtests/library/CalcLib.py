@@ -7,7 +7,7 @@ class CalcLib:
         self.result = 0
 
     def perform_expr(self, expr, val_1, val_2):
-        self.result = float(subprocess.check_output(['calc', expr, val_1, val_2]))
+        self.result = float(subprocess.check_output(['calcapp', expr, val_1, val_2]))
 
     def check_result(self, expected):
         if self.result != float(expected):
